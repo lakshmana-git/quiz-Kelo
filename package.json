@@ -1,0 +1,10 @@
+{
+  "name": "quizz-kelo",
+  "version": "1.0.0",
+  "description": "Quizz Kelo — real-time multiplayer quiz app",
+  "scripts": {
+    "dev:server": "cd server && node --watch index.js",
+    "dev:client": "cd client && npx vite",
+    "dev": "start cmd /k \"npm run dev:server\" && start cmd /k \"npm run dev:client\""
+  }
+}

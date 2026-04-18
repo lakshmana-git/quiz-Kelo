@@ -1,0 +1,80 @@
+/* ── Global Reset & Base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple-dark: #5b2bbf;
+  --purple: #7B2FF7;
+  --purple-mid: #9b59f5;
+  --pink: #F107A3;
+  --gradient: linear-gradient(135deg, #7B2FF7 0%, #F107A3 100%);
+  --gradient-soft: linear-gradient(160deg, #6a1fe0 0%, #c030c0 100%);
+  --white: #ffffff;
+  --card-bg: #ffffff;
+  --text-dark: #1a1a2e;
+  --text-muted: #6b7280;
+  --correct: #d4f5c4;
+  --correct-border: #4caf50;
+  --wrong: #fde8e8;
+  --wrong-border: #ef4444;
+  --border: #e5e7eb;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 32px rgba(123,47,247,0.15);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  color: var(--text-dark);
+  background: #f3f0ff;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+a { color: var(--purple); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+  gap: 8px;
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(123,47,247,0.3); }
+.btn:not(:disabled):active { transform: translateY(0); }
+
+.btn-primary {
+  background: var(--gradient);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(123,47,247,0.35);
+}
+
+.btn-white {
+  background: var(--white);
+  color: var(--purple);
+  border: 2px solid rgba(123,47,247,0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--purple);
+  border: 2px solid var(--purple);
+}
+.btn-outline:not(:disabled):hover {
+  background: var(--purple);
+  color: var(--white);
+}
+
+.w-full { width: 100%; }

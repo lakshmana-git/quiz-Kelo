@@ -1,0 +1,193 @@
+/* ── Lobby Pages ────────────────────────────────────────── */
+.lobby-root {
+  min-height: 100vh;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.lobby-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  background: var(--gradient);
+  font-size: 1.1rem;
+}
+
+.lobby-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.4s ease;
+  text-align: center;
+}
+
+.lobby-logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--purple);
+  margin-bottom: 16px;
+}
+
+.lobby-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Join code block */
+.lobby-code-block {
+  background: #f3f0ff;
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.lobby-code-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.lobby-code {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 8px;
+  color: var(--purple);
+  font-variant-numeric: tabular-nums;
+}
+
+.lobby-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.lobby-status {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.lobby-status.ready { background: #d4f5c4; color: #2e7d32; }
+.lobby-status.active { background: #fff3cd; color: #856404; }
+.lobby-status.finished { background: #fde8e8; color: #c0392b; }
+
+/* Players list */
+.lobby-players {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.lobby-players h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.lobby-waiting {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.lobby-player-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.lobby-player-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #f9f9f9;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+
+.player-dot {
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.lobby-start-btn { margin-top: 4px; }
+
+/* ── Player Waiting Room ──────────────────────────────── */
+.lobby-player-waiting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lobby-welcome-icon {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+}
+
+.lobby-quiz-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--purple);
+  margin-bottom: 12px;
+}
+
+.lobby-waiting-msg {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* Pulse ring animation */
+.lobby-pulse-ring {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(123,47,247,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-ring 1.5s ease-out infinite;
+  margin-bottom: 20px;
+}
+
+.lobby-pulse-dot {
+  width: 20px;
+  height: 20px;
+  background: var(--purple);
+  border-radius: 50%;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(123,47,247,0.4); }
+  70% { transform: scale(1.08); box-shadow: 0 0 0 18px rgba(123,47,247,0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(123,47,247,0); }
+}
+
+.lobby-tip {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
