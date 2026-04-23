@@ -221,7 +221,11 @@ export default function QuizPlay() {
           {question.options.map((opt, i) => {
             let cls = 'play-option';
             if (answered && selected === i) {
-              cls += result?.isCorrect ? ' correct' : ' wrong';
+              if (result) {
+                cls += result.isCorrect ? ' correct' : ' wrong';
+              } else {
+                cls += ' selected';
+              }
             }
             return (
               <button
@@ -232,8 +236,8 @@ export default function QuizPlay() {
               >
                 <span className="option-letter">{String.fromCharCode(65 + i)}</span>
                 {opt}
-                {answered && selected === i && (
-                  <span className="option-icon">{result?.isCorrect ? '✓' : '✗'}</span>
+                {answered && selected === i && result && (
+                  <span className="option-icon">{result.isCorrect ? '✓' : '✗'}</span>
                 )}
               </button>
             );
